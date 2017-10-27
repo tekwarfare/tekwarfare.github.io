@@ -1,7 +1,0 @@
----
-hide_body: false
-fields:
-- type: textarea
-- type: datetime
-  name: date
-  label: date
