@@ -57,6 +57,11 @@ article{
   margin:30px;
 }
 
+article img#feature{
+  width:644px;
+  object-fit:cover;
+}
+
 div#navbar{
   margin:auto;
   width:704px;
