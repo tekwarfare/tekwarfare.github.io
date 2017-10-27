@@ -68,8 +68,8 @@ div#container{
   width:704px;
 }
 
-div#container h1{
-  text-align: center;
+div#container #coverflow h1 a{
+  color:blue;
 }
 
 div#top{
