@@ -16,3 +16,4 @@ date:
 type               : "date"
 options:
 format           : "iso8601"
+comment: true
