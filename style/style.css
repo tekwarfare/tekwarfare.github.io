@@ -122,18 +122,22 @@ table#coverflow{
 
 table#coverflow .description{
   text-align: left;
-}
-
-table#coverflow .date{
-  font-size:12px;
-  color:grey;
-  float:left;
+  margin-top:8px;
 }
 
 table img.date{
-  margin-top:13px;
-  height:16px;
-  width:16px;
+  height:12px;
+  width:12px;
+  margin-top:32px !important;
+  margin-right:4px;
+}
+
+table#coverflow .date{
+  font-size:13px;
+  color:grey;
+  float:left;
+  margin-top:28px;
+  margin-bottom:0px;
 }
 
 /*table#coverflow tr:hover{
@@ -144,7 +148,7 @@ table img.thumbnail{
   height:120px;
   width:120px;
   object-fit:cover;
-  padding:10px 10px 0px 10px;
+  margin:10px 10px 5px 27px;
 }
 
 table#coverflow .flowimg{
