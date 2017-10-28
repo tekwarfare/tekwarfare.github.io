@@ -68,8 +68,8 @@ div#container{
   width:704px;
 }
 
-div#container #coverflow h1 a{
-  color:blue;
+div#container #coverflow h1{
+  font-size:24px;
 }
 
 div#top{
@@ -121,16 +121,28 @@ table#coverflow{
 }
 
 table#coverflow .description{
-text-align: left;
+  text-align: left;
+}
+
+table#coverflow .date{
+  font-size:12px;
+  color:grey;
+  float:left;
+}
+
+table img.date{
+  margin-top:13px;
+  height:16px;
+  width:16px;
 }
 
 /*table#coverflow tr:hover{
   background:#f5f5f5;
 }*/
 
-table img{
-  height:100px;
-  width:100px;
+table img.thumbnail{
+  height:120px;
+  width:120px;
   object-fit:cover;
   padding:10px 10px 0px 10px;
 }
@@ -159,8 +171,7 @@ table#coverflow tr:hover .flowimg{
 
 table#coverflow th{
   height:1px;
-  background: linear-gradient(to right, #eee , #aaa);
-  margin:0;
+  background: linear-gradient(to right, #eee , #214668);
 }
 
 table#coverflow h1{
