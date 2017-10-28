@@ -117,7 +117,7 @@ table#coverflow{
   width:700px;
   background:#white;
   padding:0;
-  margin-top:20px;
+  margin-top:40px;
 }
 
 table#coverflow .description{
@@ -188,6 +188,7 @@ table#coverflow .flowimg{
 }
 
 div#footer{
+  margin-top:10px !important;
   text-align:center;
   margin:auto;
 }
