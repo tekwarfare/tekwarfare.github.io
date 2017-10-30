@@ -199,11 +199,18 @@ table#coverflow .flowimg{
   text-decoration: none;
   display: inline;
   color:#214668;
+}
 
+#prevpage, #prevpage a{
+  margin-left: 5px;
+  text-decoration: none;
+  display:inline;
+  color:#214668;
 }
 
 #pagelist{
-  margin:0 0 0 172px;
+  display:inline;
+  margin:0 0 0 50px;
   width:300px;
 }
 
