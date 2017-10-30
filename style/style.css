@@ -245,6 +245,10 @@ i {
 
 }
 
+video{
+  margin:auto;
+}
+
 div#footer{
   margin-top:10px !important;
   text-align:center;
