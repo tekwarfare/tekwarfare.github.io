@@ -242,6 +242,15 @@ i {
   border: solid #8bb4da;
   border-width: 0 3px 3px 0;
   transform: rotate(135deg);
+}
+
+#testsystem{
+  text-align: center;
+}
+
+.imgoverlay{
+  background:rgba(0,0,0,0.6);
+  text-align: center;
 
 }
 
