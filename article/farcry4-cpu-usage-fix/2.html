@@ -77,7 +77,7 @@
 
       <div id="pagenav">
 
-        <select id = "pagelist" onchange="location = this.value;">
+        <select id = "pagelist" onchange="if (this.value) window.location.href=this.value">
           <option value = "index">Page 1 - Introduction</option>
           <option value = "2">Page 2 - Test System</option>
           <option value = "3">Page 3 - FarCry 3 Benchmark</option>
