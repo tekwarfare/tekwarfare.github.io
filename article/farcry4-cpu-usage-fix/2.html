@@ -11,62 +11,96 @@
 
 <body>
 
-    <header>
-      <h1><a href="index.html">TekWarfare</a></h1>
-    </header>
+  <header>
+    <h1><a href="index.html">TekWarfare</a></h1>
+  </header>
 
-      <div id="navbar">
-        <nav>
-          <ul>
-            <li class="selected"><a href="/">Home</a></li>
-            <li><a href="reviews">Reviews</a></li>
-            <li><a href="thoughts">Thoughts</a></li>
-          </ul>
-        </nav>
-      </div>
-
-<div id="top"></div>
-
-<div id="container">
-
-  <article>
-
-    <h1>FarCry 3 CPU Usage fix</h1>
-
-    <img id="feature" src="farcry4-banner.png">
-
-    <p>
-      If you've experienced stuttering in either FarCry3, Blood Dragon or FarCry 4 then this guide should help to fix that.
-      The crux of the fix involves changing the processors the game's process is allowed to run on. Since I have a 4-core i5 the only affected core is "CPU3", but the logic can be applied to greater core/thread parts.
-    </p>
-    <p>
-      The problem can be analyzed using an overlay tool like MSI Afterburner and monitoring the usage or utilization of each core. It can be seen that CPU3 is pegged at 100% (more or less) for the duration of the game and is what leads to the stuttering experience.
-    </p>
-
-    <video src="farcry3bd-benchmark.webm" controls>
-      <script>
-        var video = document.currentScript.parentElement;
-        video.volume = 0.4;
-        </script>
-      </video>
-
-      <label>Select list</label>
-                   <select id = "myList" onchange="location = this.value;">
-                     <option value = "index">one</option>
-                     <option value = "2">two</option>
-                     <option value = "3">three</option>
-                     <option value = "4">four</option>
-                   </select>
-
-  </article>
-
-    <div id="footer">
-      Copyright &copy; 2017
+  <div id="navbar">
+    <nav>
+      <ul>
+        <li class="selected"><a href="/">Home</a></li>
+        <li><a href="reviews">Reviews</a></li>
+        <li><a href="thoughts">Thoughts</a></li>
+      </ul>
+    </nav>
   </div>
 
-</div>
+  <div id="top"></div>
 
-<div id="bottom"></div>
+  <div id="container">
 
-</body>
-</html>
+    <article>
+
+      <h1>Test System</h1>
+
+      <img src="../../img/test-system/3570k.png" width=300px>
+      <h4>Processor: Intel Core i5 3570K</h4>
+      <p>Overclocked frequency: 4GHz</p>
+      <p>Overclocked Voltage: Offset -0.100V</p>
+
+      <img src="../../img/test-system/bequietdarkrockpro3.png" width=300px>
+      <h4>Cooler: Be Quiet! Dark Rock Pro 3</h4>
+
+      <img src="../../img/test-system/CML8GX3M2A1866C9R.png" width=300px>
+      <h4>Memory: Corsair Vengeance LP DDR3 8GB 1866MHz</h4>
+      <p>Model: CML8GX3M2A1866C9</p>
+      <p>Overclocked frequency: 2133MHz</p>
+      <p>Overclocked timings: 10-11-11-27</p>
+      <p>Overclocked voltage: 1.50V</p>
+
+      <img src="../../img/test-system/ga-z77x-d3h.png" width=300px>
+      <h4>Motherboard: GIGABYTE GA-Z77X-D3H</h4>
+
+      <img src="../../img/test-system/gtx970.png" width=300px>
+      <h4>Graphics Card: EVGA GTX970 SSC ACX 2.0+</h4>
+      Custom BIOS with custom fan curve, gpu core clock, memory clock and fan curve
+      <p>Overclocked GPU Clock: 1405MHz</p>
+      <p>Overclocked Memory Clock: 3900MHz (effective)</p>
+
+      <img src="../../img/test-system/840evo.png" width=300px>
+      <h4>SSD: Samsung 840 EVO 250GB</h4>
+
+      <img src="../../img/test-system/m12ii520w.png" width=300px>
+      <h4>Power Supply: Seasonic M12II Bronze 520W</h4>
+
+      <img src="../../img/test-system/cmhaf932.png" width=300px>
+      <h4>Case: Cooler Master HAF-932</h4>
+
+      <h4>Operating System: Microsoft Windows 10 64-bit Education 1703
+
+      <p>
+
+      </p>
+      <p>
+        The problem can be analyzed using an overlay tool like MSI Afterburner and monitoring the usage or utilization of each core. It can be seen that CPU3 is pegged at 100% (more or less) for the duration of the game and is what leads to the stuttering experience.
+      </p>
+
+      <div id="pagenav">
+
+        <select id = "pagelist" onchange="location = this.value;">
+          <option value = "index">Page 1 - Introduction</option>
+          <option value = "2">Page 2 - Test System</option>
+          <option value = "3">Page 3 - FarCry 3 Benchmark</option>
+          <option value = "4">Page 4 - FarCry 3 Blood Dragon Benchmark</option>
+          <option value = "5">Page 5 - FarCry 4 Benchmark</option>
+        </select>
+
+        <div id="nextpage">
+          <a href="2">Next Page
+            <i class="arrow right"></i></a>
+          </div>
+
+        </div>
+
+      </article>
+
+      <div id="footer">
+        Copyright &copy; 2017
+      </div>
+
+    </div>
+
+    <div id="bottom"></div>
+
+  </body>
+  </html>
