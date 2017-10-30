@@ -18,7 +18,7 @@
       <div id="navbar">
         <nav>
           <ul>
-            <li class="selected"><a href="../../index.html">Home</a></li>
+            <li class="selected"><a href="/">Home</a></li>
             <li><a href="reviews">Reviews</a></li>
             <li><a href="thoughts">Thoughts</a></li>
           </ul>
@@ -50,13 +50,22 @@
         </script>
       </video>
 
-      <label>Select list</label>
-                   <select id = "myList" onchange="location = this.value;">
-                     <option value = "index.html">one</option>
-                     <option value = "2.html">two</option>
-                     <option value = "3.html">three</option>
-                     <option value = "4.html">four</option>
-                   </select>
+      <div id="pagenav">
+
+        <select id = "pagelist" onchange="location = this.value;">
+          <option value = "index">Page 1 - Introduction</option>
+          <option value = "2">Page 2 - Test System</option>
+          <option value = "3">Page 3 - FarCry 3 Benchmark</option>
+          <option value = "4">Page 4 - FarCry 3 Blood Dragon Benchmark</option>
+          <option value = "5">Page 5 - FarCry 4 Benchmark</option>
+        </select>
+
+        <div id="nextpage">
+          <a href="2">Next Page
+          <i class="arrow right"></i></a>
+        <div>
+
+    </div>
 
   </article>
 
