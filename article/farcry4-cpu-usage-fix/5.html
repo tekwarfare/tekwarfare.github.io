@@ -50,12 +50,19 @@
       </video>
 
       <h3>CPU Usage</h3>
-      <img src="fc3bd-before.png" width=644px>
-      <img src="fc3bd-after.png" width=644px>
 
+      <div class="graph">
+        <img id="graph-cpu" src="fc3bd-before-cpu.png">
+        <button onclick="document.getElementById('graph-cpu').src='fc3bd-before-cpu.png'">Before</button>
+        <button onclick="document.getElementById('graph-cpu').src='fc3bd-after-cpu.png'">After</button>
+      </div>
       <h3>Frametimes</h3>
-      <img src="fc3bd-before-ft.png" width=644px>
-      <img src="fc3bd-after-ft.png" width=644px>
+
+      <div class="graph">
+        <img id="graph-ft" src="fc3bd-before-ft.png">
+        <button onclick="document.getElementById('graph-ft').src='fc3bd-before-ft.png'">Before</button>
+        <button onclick="document.getElementById('graph-ft').src='fc3bd-after-ft.png'">After</button>
+      </div>
 
       <div id="pagenav">
 
