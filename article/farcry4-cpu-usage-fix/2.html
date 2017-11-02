@@ -59,7 +59,7 @@
 
       <p>Edit usernotesdb.xml and paste the following code and save:</p>
 
-      <textarea class="code" id=1 readonly><objects><object
+      <textarea class="code" id=1 rows=3 readonly><objects><object
 name="FarCry4.exe" priorityclass="0" iopriorityplusone="0"
 backcolor="4294967295" collapse="0" affinity="15"></object></objects></textarea>
 
@@ -75,7 +75,7 @@ function clipboard1() {
 
         <p>Create "Core3off.xml" in the same directory with the following code:</p>
 
-        <textarea class="code" id=2 readonly><objects><object
+        <textarea class="code" id=2 rows=3 readonly><objects><object
 name="FarCry4.exe" priorityclass="0" iopriorityplusone="0"
 backcolor="4294967295" collapse="0" affinity="11"></object></objects></textarea>
 
@@ -123,7 +123,7 @@ We start from the right and count using the formula 2<sup>n</sup>.
             Create Affinity.bat, paste the following code and save it in "PATH TO GAME\bin"
           </p>
 
-          <textarea class="code" id=3 readonly rows=19>
+          <textarea class="code" id=3 readonly rows=20>
 if not "%minimized%"=="" goto :minimized
 minimized=true
 /min cmd /C "%~dpnx0"
@@ -190,7 +190,7 @@ We then repeat the process but rename the xml files so that when usernotesdb.xml
 Save the following code as Affinity.ps1:
     </p>
 
-  <textarea class="code" id=4 readonly rows=11>
+  <textarea class="code" id=4 readonly rows=12>
 PowerShell.exe -windowstyle Hidden{
 
 Start-Process -FilePath "PATH TO GAME\bin\FarCry4.exe" -ArgumentList "-skipintro"
@@ -226,7 +226,7 @@ You could edit the registry so that double-clicking runs the script and thus lau
 <p>
 You could create a shortcut with the following target:
 </p>
-<textarea class="code" id=5 readonly rows=1>
+<textarea class="code" id=5 readonly rows=2>
 %SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File "PATH TO GAME\bin\Affinity.ps1"</textarea>
 
 <p>
@@ -249,26 +249,6 @@ Creating a shortcut of this executable and setting the run type as minimized eli
   <li>Less files - only need the PS1 or exe file</li>
   <li>Can be hidden from the taskbar</li>
 </ul>
-
-<h3>Comparison of Methods</h3>
-
-<div class=video1>
-<video src="affinitybat-hb.mp4" width=644px onclick="this.play()">
-</div>
-
-<h4>BAT</h4>
-
-<div class=video2>
-<video src="affinityps1shortcut-hb.mp4" width=644px onclick="this.play()">
-</div>
-
-<h4>PS1 Shortcut</h4>
-
-<div class=video3>
-<video src="affinityexe-hb.mp4" width=644px onclick="this.play()">
-</div>
-
-<h4>Affinity.exe</h4>
 
           <div id="pagenav">
 
