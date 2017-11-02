@@ -170,18 +170,105 @@ We then repeat the process but rename the xml files so that when usernotesdb.xml
 </p>
 
 <p>
-  Creating a shortcut and settings Run to Minimzed entirely eliminates the blink entirely and negates the need of the first 5 lines, however Steam will not allow you to add shortcuts.
-  To launch the game through Steam you could duplicate Affinity.bat and rename it Affinity.exe and add it as a non-steam game.
+  Creating a shortcut and setting run to minimzed eliminates the blink entirely and negates the need of the first 5 lines.
+  But when launching the shortcut through Steam you will see the CMD prompt window blink so it doesn't add anything.
+  Instead to launch the game through Steam you could duplicate Affinity.bat and rename it Affinity.exe and add it as a non-steam game.
   Then simply edit the shortcut so the target is the bat file.
   Obviously Steam won't track play time this way (if you bought it through Steam).
   Trying to be clever and adding launch options like "-minimized" doesn't work so it turns out the first 5 lines are necessary to hide the window.
 </p>
 
-          <h3>Process Hacker tip</h3>
+          <h3>Process Hacker GUI tip</h3>
 
           <p class="tip">
-            Tip: You can tidy the interface by right-clicking "System Idle Process"  and "wininit.exe" hovering over Miscellaneous and clicking "Collpase by default". You could also do the same for any sub-processes of explorer.exe, for instance Steam and Firefox have multiple processes which clutter the interface. Changes only take effect on next startup though.
+            You can tidy the interface by right-clicking "System Idle Process"  and "wininit.exe" hovering over Miscellaneous and clicking "Collpase by default". You could also do the same for any sub-processes of explorer.exe, for instance Steam and Firefox have multiple processes which clutter the interface. Changes only take effect on next startup though.
           </p>
+
+    <h3>The Powershell Way</h3>
+
+    <p>
+Save the following code as Affinity.ps1:
+    </p>
+
+  <textarea class="code" id=4 readonly rows=11>
+PowerShell.exe -windowstyle Hidden{
+
+Start-Process -FilePath "PATH TO GAME\bin\FarCry4.exe" -ArgumentList "-skipintro"
+
+$Process = Get-Process FarCry4
+$Process.ProcessorAffinity = 11
+
+Start-Sleep -s 5
+
+$Process = Get-Process FarCry4
+$Process.ProcessorAffinity = 15
+}</textarea>
+
+<img class="clipboard" onclick="clipboard4()" src="../../img/clipboard.png" onmouseover="this.src='../../img/clipboard-hover.png';" onmouseout="this.src='../../img/clipboard.png';" onmousedown="this.src='../../img/clipboard-click.png';" onmouseup="this.src='../../img/clipboard-hover.png';">
+
+<script>
+function clipboard4() {
+  var copyText = document.getElementById("4");
+  copyText.select();
+  document.execCommand("Copy");
+}
+</script>
+
+<p>
+Again, you'll need to swap "FarCry4" with the executable name of your game.
+Unfortunately, the only way to execute powershell scripts is by right-clicking them and hitting "Run with PowerShell".
+This means there's no way to add a functioning shortcut in steam - attempting to do so will merely launch the program associated with ps1 file types.
+In my case Notepad is launched for me to edit the file. Not exactly useful.
+Changing the default association doesn't work either, you just get a powershell window blink and nothing happens.
+You could edit the registry so that double-clicking runs the script and thus launching via steam works as expeccted. However, Jeffery Hicks advises on not doing this as it imposes several security risks, namely allowing untrusted scripts to be executed. Thus I will not be exploring this idea.
+</p>
+
+<p>
+You could create a shortcut with the following target:
+</p>
+<textarea class="code" id=5 readonly rows=1>
+%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File "PATH TO GAME\bin\Affinity.ps1"</textarea>
+
+<p>
+Then simply add any exe as a non-steam game.
+Now right click on it in Steam and go to properties. Hit "Change..." and choose "All Files (*.*)" for the file type.
+Add the shortcut you made in the previous step. You will see a window appear for the best part of a second though.
+</p>
+
+<p>
+An alternative is to convert the powerhsell script into an executable, I used <a href=https://ps2exe.azurewebsites.net/>this site</a>.
+Copy the PowerShell script into the blue field and give it a name underneath not forgetting to put .exe at the end.
+You will get a window blink now when executing it or launching via Steam, much better than before.
+Creating a shortcut of this executable and setting the run type as minimized eliminates the blink entirely, but this only works through explorer. Adding the shortcut through Steam still results in a blink.
+</p>
+
+<h3>Advantages of PowerShell:</h3>
+
+<ul>
+  <li>No third party software</li>
+  <li>Less files - only need the PS1 or exe file</li>
+  <li>Can be hidden from the taskbar</li>
+</ul>
+
+<h3>Comparison of Methods</h3>
+
+<div class=video>
+<video src="affinitybat-hb.mp4" width=644px onclick="this.play()">
+</div>
+
+<h4>BAT</h4>
+
+<div class=video>
+<video src="affinityps1shortcut-hb.mp4" width=644px onclick="this.play()">
+</div>
+
+<h4>PS1 Shortcut</h4>
+
+<div class=video>
+<video src="affinityexe-hb.mp4" width=644px onclick="this.play()">
+</div>
+
+<h4>Affinity.exe</h4>
 
           <div id="pagenav">
 
