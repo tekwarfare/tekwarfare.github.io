@@ -31,82 +31,192 @@
 
     <article>
 
-      <h1>Test System</h1>
+      <h1>An Automated Fix</h1>
 
-      <div id="testsystem">
+      <h3>The Process Hacker Way</h3>
 
-      <img src="../../img/test-system/3570k.png" width=300px>
-      <h4>Processor: Intel Core i5 3570K</h4>
-      <p>Overclocked frequency: 4GHz</p>
-      <p>Overclocked Voltage: Offset -0.100V</p>
+      <p>Again for this guide I'll be using FarCry 4 as the example, but the process is the same for the other two games.</p>
 
-      <img src="../../img/test-system/bequietdarkrockpro3.png" width=300px>
-      <h4>Cooler: Be Quiet! Dark Rock Pro 3</h4>
+      <p>
+        Download the latest binaries of Process Hacker from <a href =https://wj32.org/processhacker/nightly.php>here</a>. You could download and install the setup version if you prefer, but this guide will only focus on using the binaries.
+      </p>
 
-      <img src="../../img/test-system/CML8GX3M2A1866C9R.png" width=300px>
-      <h4>Memory: Corsair Vengeance LP DDR3 8GB 1866MHz</h4>
-      <p>Model: CML8GX3M2A1866C9</p>
-      <p>Overclocked frequency: 2133MHz</p>
-      <p>Overclocked timings: 10-11-11-27</p>
-      <p>Overclocked voltage: 1.50V</p>
+      <p>
+        Extract the x64 folder from the zip file to "PATH TO GAME\bin"
+      </p>
 
-      <img src="../../img/test-system/ga-z77x-d3h.png" width=300px>
-      <h4>Motherboard: GIGABYTE GA-Z77X-D3H</h4>
+      <p>
+        The following list is the executable name for each game (note the DX11 versions):
+      </p>
 
-      <img src="../../img/test-system/gtx970.png" width=300px>
-      <h4>Graphics Card: EVGA GTX970 SSC ACX 2.0+</h4>
-      <p>Custom BIOS</p>
-      <p>Overclocked GPU Clock: 1405MHz</p>
-      <p>Overclocked Memory Clock: 3900MHz (effective)</p>
+      <ul>
+        <li>FarCry 3: farcry3.exe</li>
+        <li>FarCry 3 DX11: farcry3_d3d11.exe</li>
+        <li>FarCry 3 Blood Dragon: fc3_blooddragon.exe</li>
+        <li>FarCry 3 Blood Dragon DX11: fc3_blooddragon_d3d11_b.exe</li>
+        <li>FarCry 4: FarCry4.exe</li>
+      </ul>
 
-      <img src="../../img/test-system/840evo.png" width=300px>
-      <h4>SSD: Samsung 840 EVO 250GB</h4>
+      <p>Edit usernotesdb.xml and paste the following code and save:</p>
 
-      <img src="../../img/test-system/m12ii520w.png" width=300px>
-      <h4>Power Supply: Seasonic M12II Bronze 520W</h4>
+      <textarea class="code" id=1 readonly><objects><object
+name="FarCry4.exe" priorityclass="0" iopriorityplusone="0"
+backcolor="4294967295" collapse="0" affinity="15"></object></objects></textarea>
 
-      <img src="../../img/test-system/cmhaf932.png" width=300px>
-      <h4>Case: Cooler Master HAF-932</h4>
-      <p>Only rear 140mm fan is plugged in</p>
+<img class="clipboard" onclick="clipboard1()" src="../../img/clipboard.png" onmouseover="this.src='../../img/clipboard-hover.png';" onmouseout="this.src='../../img/clipboard.png';" onmousedown="this.src='../../img/clipboard-click.png';" onmouseup="this.src='../../img/clipboard-hover.png';">
 
-      <img src="../../img/test-system/windows10education.png" width=300px>
-      <h4>Operating System: Microsoft Windows 10 64-bit Education 1703</h4>
+<script>
+function clipboard1() {
+  var copyText = document.getElementById("1");
+  copyText.select();
+  document.execCommand("Copy");
+}
+</script>
 
-    </div>
+        <p>Create "Core3off.xml" in the same directory with the following code:</p>
 
-      <div id="pagenav">
+        <textarea class="code" id=2 readonly><objects><object
+name="FarCry4.exe" priorityclass="0" iopriorityplusone="0"
+backcolor="4294967295" collapse="0" affinity="11"></object></objects></textarea>
 
-        <div id="prevpage">
-          <a href="index">
-            <i class="arrow left"></i>
-            Previous Page</a>
-          </div>
+<img class="clipboard" onclick="clipboard2()" src="../../img/clipboard.png" onmouseover="this.src='../../img/clipboard-hover.png';" onmouseout="this.src='../../img/clipboard.png';" onmousedown="this.src='../../img/clipboard-click.png';" onmouseup="this.src='../../img/clipboard-hover.png';">
 
-          <select id = "pagelist" onchange="if (this.value) window.location.href=this.value">
-            <option value = "index">Page 1 - Introduction</option>
-            <option value = "2" selected>Page 2 - Test System</option>
-            <option value = "3">Page 3 - BIOS Settings</option>
-            <option value = "4">Page 4 - FarCry 3 Benchmark</option>
-            <option value = "5">Page 5 - FarCry 3 Blood Dragon Benchmark</option>
-            <option value = "6">Page 6 - FarCry 4 Benchmark</option>
-          </select>
+<script>
+function clipboard2() {
+  var copyText = document.getElementById("2");
+  copyText.select();
+  document.execCommand("Copy");
+}
+</script>
 
-          <div id="nextpage">
-            <a href="3">Next Page
-              <i class="arrow right"></i></a>
+<p>
+
+</p>
+
+<h3>A Quick Lesson in Binary</h3>
+
+<img class=articleimg src=affinity-changed-90deg.png>
+
+<p>
+We start from the right and count using the formula 2<sup>n</sup>.
+<br>2<sup>0</sup> = 1
+<br>2<sup>1</sup> = 2
+<br>2<sup>2</sup> = 4
+<br>2<sup>3</sup> = 8
+<br> This gives us a basic binary pattern
+<br>Next we put a 1 for on and a 0 for off.
+<br>We want CPU2 (core 3) to "turn off" so we have 1011 in binary.
+<br> Now simply add the elements from the binary pattern which have a 1, e.g. 1 + 2 + 8 = 11
+<br>11 is the decimal equivalent to 1011 in binary.
+</p>
+
+<img class=articleimg src=affinity-all-90deg.png>
+
+<p>
+  We repeat the same process for the instance we want all cores on
+  <br>1 + 2 + 4 + 8 = 15
+  <br>15 is the decimal equivalent of 1111 in binary.
+
+<h3>The Process Hacker Way Continued</h3>
+
+          <p>
+            Create Affinity.bat, paste the following code and save it in "PATH TO GAME\bin"
+          </p>
+
+          <textarea class="code" id=3 readonly rows=19>
+if not "%minimized%"=="" goto :minimized
+minimized=true
+/min cmd /C "%~dpnx0"
+goto :EOF
+:minimized
+
+cd "PATH TO GAME\bin\x64\"
+rename "usernotesdb.xml" "Core3on.xml"
+rename "Core3off.xml" "usernotesdb.xml"
+start /min ProcessHacker.exe
+cd "PATH TO GAME\bin\"
+start FarCry4.exe -skipintro
+TIMEOUT /T 5 /NOBREAK
+taskkill /f /im "ProcessHacker.exe"
+cd "PATH TO GAME\bin\x64\"
+rename "usernotesdb.xml" "Core3off.xml"
+rename "Core3on.xml" "usernotesdb.xml"
+start /min ProcessHacker.exe
+TIMEOUT /T 5 /NOBREAK
+taskkill /f /im "ProcessHacker.exe"</textarea>
+
+
+<img class="clipboard" onclick="clipboard3()" src="../../img/clipboard.png" onmouseover="this.src='../../img/clipboard-hover.png';" onmouseout="this.src='../../img/clipboard.png';" onmousedown="this.src='../../img/clipboard-click.png';" onmouseup="this.src='../../img/clipboard-hover.png';">
+
+<script>
+function clipboard3() {
+  var copyText = document.getElementById("3");
+  copyText.select();
+  document.execCommand("Copy");
+}
+</script>
+
+<p>
+  ADD EDITIBLE VERSION OF CODE SO USERS CAN WRITE THEIR FILES PATHS IN AND COPY IT. SAVES HAVING TO LOAD NOTEPAD ETC.
+</p>
+
+<p>
+You can't entirely eliminate the blink of the CMD prompt window but the first section does well to hide it from the user.
+The next section is in two parts. First we navigate to the ProcessHacker.exe folder - you can use absolute or relative paths, but I stuck with absolute paths.
+We rename the files so that when usernotesdb.xml is loaded it contains affinity="11" and core 3 is removed from the processes's affinity.
+Then we start Process Hacker, navigate to the game's executable and start the game with the -skipintro flag.
+We wait for 5 seconds before killing Process Hacker so that the program has time to set the affinity.
+We then repeat the process but rename the xml files so that when usernotesdb.xml is loaded it contains affinity="15" and all cores are engaged.
+</p>
+
+<p>
+  Creating a shortcut and settings Run to Minimzed entirely eliminates the blink entirely and negates the need of the first 5 lines, however Steam will not allow you to add shortcuts.
+  To launch the game through Steam you could duplicate Affinity.bat and rename it Affinity.exe and add it as a non-steam game.
+  Then simply edit the shortcut so the target is the bat file.
+  Obviously Steam won't track play time this way (if you bought it through Steam).
+  Trying to be clever and adding launch options like "-minimized" doesn't work so it turns out the first 5 lines are necessary to hide the window.
+</p>
+
+          <h3>Process Hacker tip</h3>
+
+          <p class="tip">
+            Tip: You can tidy the interface by right-clicking "System Idle Process"  and "wininit.exe" hovering over Miscellaneous and clicking "Collpase by default". You could also do the same for any sub-processes of explorer.exe, for instance Steam and Firefox have multiple processes which clutter the interface. Changes only take effect on next startup though.
+          </p>
+
+          <div id="pagenav">
+
+            <div id="prevpagefirst">
+              <i class="arrow leftfirst"></i>
+              Previous Page
             </div>
 
+            <select id = "pagelist" onchange="location = this.value;">
+              <option value = "index">Page 1 - Introduction</option>
+              <option value = "2" selected>Page 2 - An Automated Fix</option>
+              <option value = "3">Page 3 - Test System</option>
+              <option value = "4">Page 4 - BIOS Settings</option>
+              <option value = "5">Page 5 - FarCry 3 Benchmark</option>
+              <option value = "6">Page 6 - FarCry 3 Blood Dragon Benchmark</option>
+              <option value = "7">Page 7 - FarCry 4 Benchmark</option>
+              <option value = "8">Page 8 - Conclusion</option>
+            </select>
+
+            <div id="nextpage">
+              <a href="2">Next Page
+                <i class="arrow right"></i></a>
+              </div>
+
+            </div>
+
+          </article>
+
+          <div id="footer">
+            Copyright &copy; 2017
           </div>
 
-        </article>
-
-        <div id="footer">
-          Copyright &copy; 2017
         </div>
 
-      </div>
+        <div id="bottom"></div>
 
-      <div id="bottom"></div>
-
-    </body>
-    </html>
+      </body>
+      </html>

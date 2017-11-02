@@ -269,3 +269,34 @@ div#footer{
   text-align: center;
   margin: auto;
 }
+
+.articleimg{
+  margin-top:5px;
+  margin-bottom: 5px;
+  max-width: 644px;
+}
+
+p.tip{
+  background-color: #fffdba;
+  margin-left:30px;
+  margin-right: 30px;
+}
+
+textarea.code{
+  width: 644px;
+  resize: none;
+  background-color: #f5f5f5;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+.clipboard:hover{
+  cursor: pointer;
+}
+
+.clipboard:active{
+  transform: translateY(2px);
+}

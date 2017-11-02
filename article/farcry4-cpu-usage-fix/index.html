@@ -31,16 +31,44 @@
 
     <article>
 
-      <h1>FarCry 3 CPU Usage fix</h1>
+      <h1>FarCry 4 CPU Usage fix</h1>
 
       <img id="feature" src="farcry4-banner.png">
 
+      <h3>Introduction</h3>
+
       <p>
-        If you've experienced stuttering in either FarCry3, Blood Dragon or FarCry 4 then this guide should help to fix that.
-        The crux of the fix involves changing the processors the game's process is allowed to run on. Since I have a 4-core i5 the only affected core is "CPU3", but the logic can be applied to greater core/thread parts.
+        Stuttering has been prevalent in my experience of the FarCry games, specifically FarCry 3, FarCry 3 Blood Dragon and FarCry 4.
+        I'm going to take a look at the three FarCry games in turn and study what benefits to performance this fix has, and how they are perceived.
       </p>
+
+      <h3>The Manual Fix</h3>
+
       <p>
-        The problem can be analyzed using an overlay tool like MSI Afterburner and monitoring the usage or utilization of each core. It can be seen that CPU3 is pegged at 100% (more or less) for the duration of the game and is what leads to the stuttering experience.
+        I'll use FarCry 4 for the following example, but the steps are exactly the same for the other two games. Through gameplay the utilization of CPU3 oscillates between  95% and 100%.
+      </p>
+      <img class="articleimg" src="usage-before.png">
+      <p>
+        Simply Alt+Tab out of the game at any point and bring up task manager. Head over to the Details tab and arrange the processes by Memory from high to low (Games will always be at the top of the list this way).
+      </p>
+      <img class="articleimg" src="taskmanager.png">
+      <p>
+        Right-click the game in question (in this case FarCry4.exe) and select "Set affinity"
+      </p>
+      <img class="articleimg" src="affinity-changed.png">
+      <p>
+        Untick CPU 2 (Core 3) and hit OK
+      </p>
+      <img class="articleimg" src="affinity-all.png">
+      <p>
+        Right-click the game and select "Set affinity" once again, tick CPU 2 and click OK
+      </p>
+
+      <p>
+        Yes, we just unticked CPU 2 and ticked it again. Going back into the game we find that Core 3 is no longer maxed out as shown, but the usage of the other three cores increases.
+      </p>
+      <img class="articleimg" src="usage-after.png">
+      <p>
       </p>
 
       <div id="pagenav">
@@ -52,11 +80,13 @@
 
         <select id = "pagelist" onchange="location = this.value;">
           <option value = "index" selected>Page 1 - Introduction</option>
-          <option value = "2">Page 2 - Test System</option>
-          <option value = "3">Page 3 - BIOS Settings</option>
-          <option value = "4">Page 4 - FarCry 3 Benchmark</option>
-          <option value = "5">Page 5 - FarCry 3 Blood Dragon Benchmark</option>
-          <option value = "6">Page 6 - FarCry 4 Benchmark</option>
+          <option value = "2">Page 2 - An Automated Fix</option>
+          <option value = "3">Page 3 - Test System</option>
+          <option value = "4">Page 4 - BIOS Settings</option>
+          <option value = "5">Page 5 - FarCry 3 Benchmark</option>
+          <option value = "6">Page 6 - FarCry 3 Blood Dragon Benchmark</option>
+          <option value = "7">Page 7 - FarCry 4 Benchmark</option>
+          <option value = "8">Page 8 - Conclusion</option>
         </select>
 
         <div id="nextpage">
