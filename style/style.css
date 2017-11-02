@@ -254,7 +254,7 @@ i {
 
 }
 
-video{
+video, #video1, #video2, #video3{
   display: block;
   margin:auto;
 }
